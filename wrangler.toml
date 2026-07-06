@@ -1,0 +1,16 @@
+name = "halloweentok-shard-1"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "halloweentok-shard-1-db"
+database_id = "2d0a498c-10c4-4972-9c3e-216b56a31438"
+
+[vars]
+INTERNAL_SECRET = "REPLACE_WITH_LONG_RANDOM_SECRET"
+
+# Чтобы добавить ещё +5GB: скопируй эту папку в shard-worker-2,
+# поменяй name/database_name/database_id, задеплой,
+# и добавь строку в таблицу `shards` главной БД (см. schema.sql) —
+# главный воркер сам начнёт писать в новый шард, когда текущий заполняется.
